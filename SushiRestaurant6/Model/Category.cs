@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+
 namespace SushiRestaurant6.Model
 {
     public class Category

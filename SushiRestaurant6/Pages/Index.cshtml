@@ -2,9 +2,38 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+<!--carousel-->
+
+<div class="container">
+    <div class="slider-wrapper">
+        <button id="prev-slide" class="slide-button material-symbols-rounded">
+            chevron_left
+        </button>
+        <ul class="image-list">
+            <img src="~/css/Images/c1.png" class="image-item" alt="c1" />
+            <img src="~/css/Images/c2.png" class="image-item" alt="c2" />
+            <img src="~/css/Images/c3.png" class="image-item" alt="c3" />
+            <img src="~/css/Images/c4.png" class="image-item" alt="c4" />
+            <img src="~/css/Images/c5.png" class="image-item" alt="c5" />
+            <img src="~/css/Images/c6.png" class="image-item" alt="c6" />
+
+        </ul>
+        <button id="next-slide" class="slide-button material-symbols-rounded">
+        
+        </button>
+    </div>
+    <div class="slider-scrollbar">
+        <div class="scrollbar-track">
+            <div class="scrollbar-thumb"></div>
+        </div>
+    </div>
 </div>
+
+<!--carousel end-->
+
+

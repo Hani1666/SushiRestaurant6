@@ -123,8 +123,8 @@ namespace SushiRestaurant6.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = CreateUser();
-
+                var user = new ApplicationUser();
+                
                 user.FirstName = Input.FirstName;
                 user.LastName = Input.LastName;
 
@@ -135,6 +135,9 @@ namespace SushiRestaurant6.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+
+                    //set the user role
+                    await _userManager.AddToRoleAsync(user, "client");
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
