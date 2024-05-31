@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using SushiRestaurant6.Data;
 using SushiRestaurant6.Model;
 
-namespace SushiRestaurant6.Pages.Categories
+namespace SushiRestaurant6.Pages.Menus
 {
     public class DetailsModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace SushiRestaurant6.Pages.Categories
             _context = context;
         }
 
-        public Category Category { get; set; } = default!;
+        public Menu Menu { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,14 +28,14 @@ namespace SushiRestaurant6.Pages.Categories
                 return NotFound();
             }
 
-            var category = await _context.Category.FirstOrDefaultAsync(m => m.Id == id);
-            if (category == null)
+            var menu = await _context.Menu.FirstOrDefaultAsync(m => m.Id == id);
+            if (menu == null)
             {
                 return NotFound();
             }
             else
             {
-                Category = category;
+                Menu = menu;
             }
             return Page();
         }

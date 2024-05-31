@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using SushiRestaurant6.Data;
 using SushiRestaurant6.Model;
 
-namespace SushiRestaurant6.Pages.Categories
+namespace SushiRestaurant6.Pages.Menus
 {
     public class CreateModel : PageModel
     {
@@ -25,7 +25,7 @@ namespace SushiRestaurant6.Pages.Categories
         }
 
         [BindProperty]
-        public Category Category { get; set; } = default!;
+        public Menu Menu { get; set; } = default!;
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -35,7 +35,7 @@ namespace SushiRestaurant6.Pages.Categories
                 return Page();
             }
 
-            _context.Category.Add(Category);
+            _context.Menu.Add(Menu);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

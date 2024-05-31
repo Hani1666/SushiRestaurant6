@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using SushiRestaurant6.Data;
 using SushiRestaurant6.Model;
 
-namespace SushiRestaurant6.Pages.Menu
+namespace SushiRestaurant6.Pages.Menus
 {
     public class EditModel : PageModel
     {
