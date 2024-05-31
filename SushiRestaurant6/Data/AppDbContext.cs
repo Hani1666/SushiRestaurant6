@@ -10,5 +10,7 @@ namespace SushiRestaurant6.Data
 
         }
         public DbSet<Category> Category { get; set; }
+        public DbSet<Menu> Menu { get; set; }
+
     }
 }
